@@ -1,0 +1,22 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+  cloud:
+    discovery:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_SERVICE_URL:http://localhost:8761/eureka}
+
+  instance:
+    prefer-ip-address: true
